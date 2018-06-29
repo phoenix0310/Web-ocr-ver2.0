@@ -1,22 +1,20 @@
-/**
- * Master Controller
- */
+(function () {
+    'use strict';
 
-angular.module('App')
-    .controller('MasterCtrl',MasterCtrl);
+    angular.module('App')
+    .controller('pdfController',  pdfController);
 
-    MasterCtrl.$inject=['$scope','$http','$stateParams'];
 
-function MasterCtrl($scope,$http,$stateParams) {
-  
-    var $ctrl = this;
+    pdfController.$inject = ['$scope','$http','$stateParams'];
+    function pdfController($http,$stateParams,$scope) {
+        var $ctrl = this;
         
     
       
 
     this.$onInit=function(){
        
-       $scope.pdfUrl ='./public/pdf/test.pdf'
+       $scope.pdfUrl ='/public/pdf/test.pdf'
        $scope.pdfPassword = 'test';
        $scope.scroll = 0;
        $scope.loading = 'loading';
@@ -117,4 +115,5 @@ function MasterCtrl($scope,$http,$stateParams) {
 
 
 
-}
+    }
+})();

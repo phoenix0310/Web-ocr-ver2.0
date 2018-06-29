@@ -52,6 +52,8 @@ gulp.task('vendor', function() {
     './fr_src/libs/angular-cookies.min.js',
     './fr_src/libs/angular-messages.min.js',
     './fr_src/libs/angular-sanitize.min.js',
+    '!./fr_src/libs/pdf.js',
+    '!./fr_src/libs/pdf.worker.js',
     './fr_src/libs/*.js',
   	])
      .pipe(sourcemaps.init())

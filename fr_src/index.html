@@ -1,4 +1,4 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html ng-app="App">
 
 <head>
@@ -11,8 +11,8 @@
     crossorigin="anonymous">
   <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
     crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-    crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
@@ -24,7 +24,51 @@
 
 
 <body ng-controller="MasterCtrl">
-  <ui-view></ui-view>
+  <!-- <ui-view></ui-view> -->
+  
+  <div layout="row" layout-padding>
+    <!-- <div>
+            <h1> OUTPUT TEXTS </h1>
+            <div id="display"></div>
+        </div> -->
+
+<!-- <h1> IMAGE </h1>
+                        <md-button class="md-raised md-primary" ng-click="$ctrl.convert()">CONVERT TO OCR</md-button> -->
+<!-- <capture-photos binding-data="$ct;rl.data" output-image="$ctrl.image"></capture-photos> -->
+
+
+
+<div style="margin-left:50px;margin-top:52px" class="panel panel-info">
+   
+            <button style="position:fixed;left:1px;top:8px" class="btn btn-fab" ng-class="{true: 'btn-danger', false: 'btn-default'}[$ctrl.isUrlOpen]" ng-click="$ctrl.isUrlOpen = !$ctrl.isUrlOpen">
+                <i ng-if="!$ctrl.isUrlOpen" class="material-icons">crop</i>
+                <i ng-if="$ctrl.isUrlOpen" class="material-icons">close</i>
+            </button>
+
+            <!-- <input style="position:fixed;left:50px;top:8px" ng-model="capture"> -->
+      
+    <screenshot is-open="$ctrl.isUrlOpen" api="$ctrl.imageApi">
+        <screenshot-toolbox>
+            <div class="btn-group-sm">
+                <button class="btn btn-success" ng-click="$ctrl.sendImage()">
+                    OCR
+                </button>
+            </div>
+        </screenshot-toolbox>
+        <div class="panel-body">
+            <!-- <img src='upload/test.png'>
+                                        <canvas id="the-canvas"></canvas> -->
+            <!-- <embed src="upload/1.pdf" width="500" height="375" type='application/pdf'> -->
+            <!-- <pdfjs-viewer src="upload/1.pdf"></pdfjs-viewer> -->
+            <!-- <iframe src="upload/1.pdf" style="width: 500;height: 375;border: none;"></iframe> -->
+            <ng-pdf template-url="libs/partials/viewer.html" scale="page-fit" page=1></ng-pdf>
+        </div>
+    </screenshot>
+</div>
+</div>
+
+
+
 </body>
 
 
@@ -34,10 +78,16 @@
 <!-- Libraries -->
 <script src="libs/jquery-3.1.0.min.js"></script>
 <script src="dist/vendor.js"></script>></script>
+<script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
 <!-- Angular Material Library -->
 <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
 <script src="dist/scripts.min.js"></script>
+<script src="libs/pdf.js"></script>
+<script src="libs/pdf.worker.js"></script>
+
+<script src="libs/angular-pdf.js"></script>
+
 
 
 

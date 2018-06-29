@@ -23,7 +23,7 @@ app.use(cookieParser());
 
 app.use('/app', express.static('./fr_src/'));
 app.get('/app/*', (req, res) => res.sendfile('index.html',
- 	{root: path.join(__dirname,'/fr_src/')}));
+ 	{root: path.join(__dirname,'./fr_src/')}));
 
    app.get('/', function (req, res) {
     return res.redirect('/app');
