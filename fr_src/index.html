@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <script src="libs/dragscroll.js"></script>
   <!-- Styles -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
     crossorigin="anonymous">
@@ -29,8 +29,10 @@
 
     <!-- <pdf-upload out-url="aaapdfUrl" ></pdf-upload> -->
     <!-- <pdf-show pdf="pdfUrl"></pdf-show> -->
+
+    <!-- <div style="width:100vw;height:100vh;overflow:auto" class="free dragscroll"> -->
   <ui-view></ui-view>
-  
+
   <!-- <div layout="row" layout-padding>
    
 
@@ -77,8 +79,8 @@
 <script src="main-module/master-ctrl.js"></script>
 <script src="dist/scripts.min.js"></script>
 <script src="libs/pdf.js"></script>
-<script src="libs/pdf.worker.js"></script>
 
+<script src="libs/pdf.worker.js"></script>
 <script src="libs/angular-pdf.js"></script>
 
 

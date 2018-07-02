@@ -14,6 +14,7 @@
     <i ng-show="$ctrl.upload_form.file.$error.required">*required</i><br>
     <i ng-show="$ctrl.upload_form.file.$error.maxSize">File too large 
     {{$ctrl.file.size / 1000000|number:1}}MB: max 20M</i>
+    {{$ctrl.file.name}}
     <!--  Multiple files
     <div class="button" ngf-select ng-model="$ctrl.files" ngf-multiple="true">Select</div>
     Drop files: <div ngf-drop ng-model="$ctrl.files" class="drop-box">Drop</div> -->
