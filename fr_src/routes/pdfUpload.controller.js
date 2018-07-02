@@ -1,57 +1,56 @@
-/**
- * Master Controller
- */
+(function () {
+    'use strict';
 
-angular.module('App')
-    .controller('MasterCtrl',MasterCtrl);
+    angular.module('App')
+    .controller('pdfUploadController',  pdfUploadController);
 
-    MasterCtrl.$inject=['$http','$scope'];
 
-function MasterCtrl($http,$scope) {
-  
-    var $ctrl = this;
+    pdfUploadController.$inject = ['$scope','$http','$stateParams'];
+    function pdfUploadController($http,$stateParams,$scope) {
+        var $ctrl = this;
         
-   
+    
       
 
-    this.$onInit=function(){
-        $scope.pdfUrl="./public/pdf/test.pdf"
-       $scope.pdfPassword = 'test';
-       $scope.scroll = 0;
-       $scope.loading = 'loading';
+    // this.$onInit=function(){
        
-    }
+    //    $scope.pdfUrl ='/public/pdf/test.pdf'
+      //  $scope.pdfPassword = 'test';
+      //  $scope.scroll = 0;
+      //  $scope.loading = 'loading';
+       
+    // }
      
-    //    $scope.getNavStyle = function(scroll) {
-    //      if(scroll > 100) return 'pdf-controls fixed';
-    //      else return 'pdf-controls';
-    //    }
+      //  $scope.getNavStyle = function(scroll) {
+      //    if(scroll > 100) return 'pdf-controls fixed';
+      //    else return 'pdf-controls';
+      //  }
      
-    //    $scope.onError = function(error) {
-    //      console.log(error);
-    //    }
+      //  $scope.onError = function(error) {
+      //    console.log(error);
+      //  }
      
-    //    $scope.onLoad = function() {
-    //      $scope.loading = '';
-    //    }
+      //  $scope.onLoad = function() {
+      //    $scope.loading = '';
+      //  }
      
-    //    $scope.onProgress = function (progressData) {
+      //  $scope.onProgress = function (progressData) {
         
-    //    };
+      //  };
      
-    //    $scope.onPassword = function (updatePasswordFn, passwordResponse) {
-    //      if (passwordResponse === PDFJS.PasswordResponses.NEED_PASSWORD) {
-    //          updatePasswordFn($scope.pdfPassword);
-    //      } else if (passwordResponse === PDFJS.PasswordResponses.INCORRECT_PASSWORD) {
-    //          console.log('Incorrect password')
-    //      }
-    //    };
+      //  $scope.onPassword = function (updatePasswordFn, passwordResponse) {
+      //    if (passwordResponse === PDFJS.PasswordResponses.NEED_PASSWORD) {
+      //        updatePasswordFn($scope.pdfPassword);
+      //    } else if (passwordResponse === PDFJS.PasswordResponses.INCORRECT_PASSWORD) {
+      //        console.log('Incorrect password')
+      //    }
+      //  };
 
     
-    //   //  $ctrl.convert=function(){
-    //   //   var img = document.getElementById("capturedImage");
+      //  $ctrl.convert=function(){
+      //   var img = document.getElementById("capturedImage");
         
-    //   // };
+      // };
     
       
     //   $ctrl.advanceApi;
@@ -116,4 +115,5 @@ function MasterCtrl($http,$scope) {
 
 
 
-}
+    }
+})();

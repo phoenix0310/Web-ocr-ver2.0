@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('App', ["ui.router","ngMaterial","pdf",'angular-screenshot'])
+    angular.module('App', ["ui.router","ngMaterial","pdf",'angular-screenshot','ngFileUpload'])
     .config(config)
     .run(run);
 

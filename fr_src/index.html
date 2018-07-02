@@ -23,20 +23,16 @@
 </head>
 
 
-<body ng-controller="MasterCtrl">
-  <!-- <ui-view></ui-view> -->
+
+
+<body ng-controller="MasterCtrl as $ctrl">
+
+    <!-- <pdf-upload out-url="aaapdfUrl" ></pdf-upload> -->
+    <!-- <pdf-show pdf="pdfUrl"></pdf-show> -->
+  <ui-view></ui-view>
   
-  <div layout="row" layout-padding>
-    <!-- <div>
-            <h1> OUTPUT TEXTS </h1>
-            <div id="display"></div>
-        </div> -->
-
-<!-- <h1> IMAGE </h1>
-                        <md-button class="md-raised md-primary" ng-click="$ctrl.convert()">CONVERT TO OCR</md-button> -->
-<!-- <capture-photos binding-data="$ct;rl.data" output-image="$ctrl.image"></capture-photos> -->
-
-
+  <!-- <div layout="row" layout-padding>
+   
 
 <div style="margin-left:50px;margin-top:52px" class="panel panel-info">
    
@@ -45,7 +41,7 @@
                 <i ng-if="$ctrl.isUrlOpen" class="material-icons">close</i>
             </button>
 
-            <!-- <input style="position:fixed;left:50px;top:8px" ng-model="capture"> -->
+  
       
     <screenshot is-open="$ctrl.isUrlOpen" api="$ctrl.imageApi">
         <screenshot-toolbox>
@@ -56,16 +52,12 @@
             </div>
         </screenshot-toolbox>
         <div class="panel-body">
-            <!-- <img src='upload/test.png'>
-                                        <canvas id="the-canvas"></canvas> -->
-            <!-- <embed src="upload/1.pdf" width="500" height="375" type='application/pdf'> -->
-            <!-- <pdfjs-viewer src="upload/1.pdf"></pdfjs-viewer> -->
-            <!-- <iframe src="upload/1.pdf" style="width: 500;height: 375;border: none;"></iframe> -->
+          
             <ng-pdf template-url="libs/partials/viewer.html" scale="page-fit" page=1></ng-pdf>
         </div>
     </screenshot>
 </div>
-</div>
+</div> -->
 
 
 
@@ -81,7 +73,8 @@
 <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
 <!-- Angular Material Library -->
 <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-
+<script src="main-module/main.module.js"></script>
+<script src="main-module/master-ctrl.js"></script>
 <script src="dist/scripts.min.js"></script>
 <script src="libs/pdf.js"></script>
 <script src="libs/pdf.worker.js"></script>

@@ -29,6 +29,10 @@ app.get('/app/*', (req, res) => res.sendfile('index.html',
     return res.redirect('/app');
   }); 
 
+  //APi Route
+var pdfRoute = require('./bk_src/pdfApi/pdf.route');
+app.use('/api/pdf', pdfRoute);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

@@ -5,46 +5,47 @@
     .controller('pdfController',  pdfController);
 
 
-    pdfController.$inject = ['$scope','$http','$stateParams'];
-    function pdfController($http,$stateParams,$scope) {
+    pdfController.$inject = ['$http','$stateParams'];
+    function pdfController($http,$stateParams) {
         var $ctrl = this;
         
-    
+        console.log($stateParams.path)
+        console.log($stateParams)
       
 
-    this.$onInit=function(){
+    // this.$onInit=function(){
        
-       $scope.pdfUrl ='/public/pdf/test.pdf'
-       $scope.pdfPassword = 'test';
-       $scope.scroll = 0;
-       $scope.loading = 'loading';
+       $ctrl.pdfUrl =$stateParams.path
+      //  $scope.pdfPassword = 'test';
+      //  $scope.scroll = 0;
+      //  $scope.loading = 'loading';
        
-    }
+    // }
      
-       $scope.getNavStyle = function(scroll) {
-         if(scroll > 100) return 'pdf-controls fixed';
-         else return 'pdf-controls';
-       }
+      //  $scope.getNavStyle = function(scroll) {
+      //    if(scroll > 100) return 'pdf-controls fixed';
+      //    else return 'pdf-controls';
+      //  }
      
-       $scope.onError = function(error) {
-         console.log(error);
-       }
+      //  $scope.onError = function(error) {
+      //    console.log(error);
+      //  }
      
-       $scope.onLoad = function() {
-         $scope.loading = '';
-       }
+      //  $scope.onLoad = function() {
+      //    $scope.loading = '';
+      //  }
      
-       $scope.onProgress = function (progressData) {
+      //  $scope.onProgress = function (progressData) {
         
-       };
+      //  };
      
-       $scope.onPassword = function (updatePasswordFn, passwordResponse) {
-         if (passwordResponse === PDFJS.PasswordResponses.NEED_PASSWORD) {
-             updatePasswordFn($scope.pdfPassword);
-         } else if (passwordResponse === PDFJS.PasswordResponses.INCORRECT_PASSWORD) {
-             console.log('Incorrect password')
-         }
-       };
+      //  $scope.onPassword = function (updatePasswordFn, passwordResponse) {
+      //    if (passwordResponse === PDFJS.PasswordResponses.NEED_PASSWORD) {
+      //        updatePasswordFn($scope.pdfPassword);
+      //    } else if (passwordResponse === PDFJS.PasswordResponses.INCORRECT_PASSWORD) {
+      //        console.log('Incorrect password')
+      //    }
+      //  };
 
     
       //  $ctrl.convert=function(){

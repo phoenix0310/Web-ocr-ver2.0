@@ -18,7 +18,9 @@ gulp.task('compress', function() {
   gulp.src([
     '!./fr_src/libs/*.js',
     '!./fr_src/dist/*.js',
-  	'./fr_src/**/*.js',
+    '!./fr_src/main-module/main.module.js',
+    './fr_src/main-module/master-ctrl.js',
+    './fr_src/**/*.js',
     './fr_src/**/**/*.js',
 
   	])
@@ -45,7 +47,10 @@ gulp.task('compress', function() {
 gulp.task('vendor', function() {
   gulp.src([
     '!./fr_src/libs/jquery-3.1.0.min.js',
+    
     './fr_src/libs/angular.min.js',
+    './fr_src/libs/ng-file-upload-shim.min.js',
+    './fr_src/libs/ng-file-upload.min.js',
   	'./fr_src/libs/angular-ui-router.min.js',
     './fr_src/libs/angular-animate.min.js',
     './fr_src/libs/angular-aria.min.js',

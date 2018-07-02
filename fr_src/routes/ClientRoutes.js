@@ -18,10 +18,19 @@
       })
 
  // View pdf
- .state('pdf', {
-  url: '/pdf',
+ .state('client.pdf', {
+  url: '/pdf/{path}',
   templateUrl:'routes/pdf.html',
   controller: 'pdfController',
+  controllerAs:'$ctrl'
+
+})
+
+ // View pdf
+ .state('client.upload', {
+  url: '/home',
+  templateUrl:'routes/pdfUpload.html',
+  controller: 'pdfUploadController',
   controllerAs:'$ctrl'
 
 })

@@ -1,0 +1,30 @@
+<form name="$ctrl.upload_form" novalidate>
+    <h6>PDF FILE</h6>
+   
+    <input class="inputfile" name="file" id="file"
+        type="file" 
+        ngf-select 
+        ng-model="$ctrl.file" 
+        name="file" 
+        ngf-pattern="'.pdf'" 
+        accept=".pdf" 
+        ngf-max-size="20MB" 
+        />
+  
+    <i ng-show="$ctrl.upload_form.file.$error.required">*required</i><br>
+    <i ng-show="$ctrl.upload_form.file.$error.maxSize">File too large 
+    {{$ctrl.file.size / 1000000|number:1}}MB: max 20M</i>
+    <!--  Multiple files
+    <div class="button" ngf-select ng-model="$ctrl.files" ngf-multiple="true">Select</div>
+    Drop files: <div ngf-drop ng-model="$ctrl.files" class="drop-box">Drop</div> -->
+  
+    <p>{{$ctrl.progress}}</p>
+</form>
+
+<md-button type="submit" 
+class="md-raised"
+ng-click="$ctrl.submit()">submit</md-button>
+
+
+
+
